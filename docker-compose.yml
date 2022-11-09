@@ -1,0 +1,19 @@
+version: '3.5'
+services:
+  cotizacion_guayabo_cero:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      image: cotizacion_guayabo_cero:latest
+      container_name: cotizacion_guayabo_cero
+      restart: always
+      networks:
+          - proxy
+          - red_interna
+networks:
+    red_interna:
+        driver: bridge
+    proxy:
+        driver: bridge
+        name: proxy
+        external: true
