@@ -1,11 +1,11 @@
 version: '3.5'
 services:
-  cotizacion_guayabo_cero:
+  cotizaciones:
       build:
         context: .
         dockerfile: Dockerfile
-      image: cotizacion_guayabo_cero:latest
-      container_name: cotizacion_guayabo_cero
+      image: docker.pkg.github.com/daka22/cotizaciones/cotizacion:latest
+      container_name: cotizaciones
       restart: always
       networks:
           - proxy
